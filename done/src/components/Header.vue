@@ -22,8 +22,9 @@ export default {
 <style scoped>
 
 .logo{
-  width: 80px;
+  width: 120px;
   position: absolute;
+  transform: translateX(-40px);
 }
 
 h1{
