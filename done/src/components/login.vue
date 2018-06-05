@@ -18,6 +18,7 @@
             <p>{{ errorMsg }}</p>
             <button class="button button-tiny-2 close-btn" @click.prevent="close">OK</button>
         </div>
+        <div v-show="alert" class="filter"></div>
     </div>
 </template>
 
@@ -27,39 +28,44 @@ import Header from './Header'
 
 export default {
 
-components: {
-    'app-header': Header
-},
+    components: {
+        'app-header': Header
+    },
 
-  name: 'login',
-  data () {
-    return {
-        pseudo: '',
-        password: '',
-        alert: false,
-        errorMsg: 'vous n\'avez pas rempli les champs correctement bande de cons!'
-    }
-  },
-methods:{
-
-    pushInfo: function(){
-        const Pseudo = document.querySelector('#pseudo').value
-        const Password = document.querySelector('#password').value
-        if(Pseudo != '' && Password != ''){
-            this.pseudo = Pseudo
-            this.password = Password
-            alert('ok')
-            console.log(this.pseudo)
-        }
-        else{
-
-            this.alert = true
+    name: 'login',
+    data () {
+        return {
+            pseudo: '',
+            password: '',
+            alert: false,
+            errorMsg: 'vous n\'avez pas rempli les champs correctement bande de cons!'
         }
     },
-    close: function(){
-        this.alert = false
+
+    methods:{
+
+        /*toogleClassOpacity = function(){
+            const alertopacity = document.querySelector('.alert-box')
+            if(alertopacity.hasClass(''))
+            
+        },*/
+        pushInfo: function(){
+            const Pseudo = document.querySelector('#pseudo').value
+            const Password = document.querySelector('#password').value
+            if(Pseudo != '' && Password != ''){
+                this.pseudo = Pseudo
+                this.password = Password
+                alert('ok')
+                console.log(this.pseudo)
+            }
+            else{
+                this.alert = true
+            }
+        },
+        close: function(){
+            this.alert = false
+        }
     }
-}
 }
 
 </script>

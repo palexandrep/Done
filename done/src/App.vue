@@ -3,6 +3,7 @@
     <router-view/>
     <div class="footer-decoration"></div>
   </div>
+  
 </template>
 
 <script>
@@ -27,6 +28,7 @@ export default {
 h1{
   font-family: 'Julius Sans One', sans-serif;
   margin: 0;
+  padding-top: 30px;
 }
 
 body{
@@ -43,6 +45,15 @@ body{
   background-position: right;
   background-attachment: fixed;
   background-size: cover;
+}
+
+.filter{
+  background-color: rgba(46,17,45,0.6);
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: 14;
 }
 
 .footer-decoration{
@@ -62,20 +73,18 @@ body{
   box-shadow: 0px -20px 30px  rgba(130,3,51,0.4);
 }
 
-.hidden{
-  display: none;
-}
-
 .alert-box{
   width: 80%;
   height: 50vh;
   position: absolute;
   z-index: 15;
   left: 10%;
-  top: 30vh;
-  background-color: red;
+  top: 20vh;
+  background-color: #c41c38;
   padding-top: 100px;
   border-radius: 10px;
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
 }
 /*--- buttons--*/
 
