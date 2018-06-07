@@ -10,7 +10,7 @@
       </router-link>
     </div>
   </div>
-  
+
 </template>
 
 <script>
@@ -28,6 +28,16 @@ export default {
     return {
 
     }
+  },
+  mounted() {
+    this.$http.get('mysql:host=localhost;dbname=done;charset=utf8', 'root', 'root').then(
+      (response)=> {
+        console.log('sucsess', response)
+      },
+      (response)=>{
+        console.log('error', response)
+      }
+    )
   }
 }
 </script>
